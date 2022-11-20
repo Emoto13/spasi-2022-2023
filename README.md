@@ -15,3 +15,8 @@ To run the project locally make sure that you have installed Python (>= 3.10). T
 - Data used:
     - General COVID-19 data for Bulgaria - cases, deaths, hospitalized
     - COVID-19 deaths by age and gender
+- Data cleansing techniques used:
+    - Feature extraction
+    - Filling null data
+    - Merging and/ or removing unnecessary columns
+    - Grouping and aggregation
