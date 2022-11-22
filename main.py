@@ -11,9 +11,10 @@ deaths_df = pd.read_csv("./data/covid_deaths_by_age_and_gender.csv")
 mapped_df = deaths_df[deaths_df["Възрастова група"] != '-']
 gdf = mapped_df.groupby("Възрастова група").sum(numeric_only=True)
 gdf.columns = [""]
-outer_color = ["#808000", "#BA4A00", "#808080", "#229954", "#34495E",
-               "#2E86C1", "#CA6F1E", "#16A085", "#808080", "#229954",
-               "#F2D2BD", "#00FFFF"]
+outer_color = ["#FF98D2", "#FFB67A", "#FFDE2B", "#FFFF00",
+               "#93FF60", "#00FFBC", "#00FFFF", "#00D1D1",
+               "#00A3A3", "#007575", "#275D5D", "#193D3C"]
+
 gdf.plot.pie(title="Смъртност от Covid-19 по възрастови групи в България",
              subplots=True, labeldistance=None, figsize=(18, 16), fontsize=50,
              colors=outer_color)
@@ -22,7 +23,7 @@ gdf.plot.pie(title="Смъртност от Covid-19 по възрастови �
 df.set_index(["Дата"])[["Тестове за денонощие", "Излекувани за денонощие",
                         "Починали за денонощие", "Нови случаи за денонощие"]].\
                             plot(figsize=(13, 13))
-regions = pd.read_csv("drive/MyDrive/spasi/covid_data_by_regions.csv")
+regions = pd.read_csv("./data/covid_data_by_regions.csv")
 usable_regions = regions[["Дата", "BLG_ACT", "BGS_ACT", "VAR_ACT", "VTR_ACT",
                           "RSE_ACT", "SML_ACT", "JAM_ACT"]]
 usable_regions.columns = ["Дата", "Благоевград", "Бургас", "Варна",
